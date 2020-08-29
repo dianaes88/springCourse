@@ -26,7 +26,8 @@
     </bean>
 
     <bean id="musicPlayer"
-          class="ru.eskina.springcourse.MusicPlayer">
+          class="ru.eskina.springcourse.MusicPlayer"
+          scope="prototype">
 <!--        <constructor-arg ref="musicBean"/> -->
 <!--        <property name="music" ref = "musicBean"/>-->
 <!--        <property name="name" value = "MyPlayer"/>-->
