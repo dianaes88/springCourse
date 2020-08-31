@@ -14,7 +14,9 @@
     </bean>
 
     <bean id="musicBeanRock"
-          class="ru.eskina.springcourse.RockMusic ">
+          class="ru.eskina.springcourse.RockMusic "
+          init-method="doMyInit"
+          destroy-method="doMyDestroy">
     </bean>
 
     <bean id="musicBeanClassic"
