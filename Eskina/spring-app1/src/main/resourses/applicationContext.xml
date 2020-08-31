@@ -22,6 +22,7 @@
     <bean id="musicBeanClassic"
           class="ru.eskina.springcourse.ClassicalMusic"
           scope="prototype"
+            factory-method="getClassicalMusic"
             init-method="doMyInit"
             destroy-method="doMyDestroy">
     </bean>

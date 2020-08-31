@@ -1,6 +1,14 @@
 package ru.eskina.springcourse;
 
 public class ClassicalMusic implements Music {
+    private ClassicalMusic() {
+
+    }
+
+    public static ClassicalMusic getClassicalMusic() {
+        System.out.println("Create classical music bean");
+        return new ClassicalMusic();
+    }
     public void doMyInit() {
         System.out.println("Doing my initialization");
     }
