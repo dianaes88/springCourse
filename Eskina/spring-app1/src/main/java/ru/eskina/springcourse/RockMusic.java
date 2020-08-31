@@ -1,6 +1,14 @@
 package ru.eskina.springcourse;
 
 public class RockMusic implements Music {
+    private RockMusic() {
+
+    }
+    public static RockMusic getRockMusic() {
+        System.out.println("Create rock music bean");
+        return new RockMusic();
+    }
+
     @Override
     public String getSong() {
         return "Wind cries Mary";

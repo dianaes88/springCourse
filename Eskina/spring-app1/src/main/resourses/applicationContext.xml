@@ -16,6 +16,7 @@
     <bean id="musicBeanRock"
           class="ru.eskina.springcourse.RockMusic "
           init-method="doMyInit"
+          factory-method="getRockMusic"
           destroy-method="doMyDestroy">
     </bean>
 
