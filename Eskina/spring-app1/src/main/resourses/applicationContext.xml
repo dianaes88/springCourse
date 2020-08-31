@@ -19,6 +19,7 @@
 
     <bean id="musicBeanClassic"
           class="ru.eskina.springcourse.ClassicalMusic"
+          scope="prototype"
             init-method="doMyInit"
             destroy-method="doMyDestroy">
     </bean>
