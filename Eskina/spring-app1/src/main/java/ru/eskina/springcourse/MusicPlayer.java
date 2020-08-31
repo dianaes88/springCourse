@@ -8,11 +8,11 @@ import java.util.List;
 @Component
 public class MusicPlayer {
 //    private List<Music> playList = new ArrayList<>();
-    private ClassicalMusic music;
+    private Music music;
 //    private String name;
 //    private int volume;
-    @Autowired
-    public MusicPlayer(ClassicalMusic music) {
+//    @Autowired
+    public MusicPlayer(Music music) {
         this.music = music;
     }
 
@@ -49,7 +49,8 @@ public class MusicPlayer {
     public  void playMusic() {
         System.out.println("Playing " + music.getSong());
     }
-//    public void setMusic(Music music) {
-//        this.music = music;
-//    }
+    @Autowired
+    public void setMusic(Music music) {
+        this.music = music;
+    }
 }
