@@ -1,9 +1,12 @@
 package ru.eskina.springcourse;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class RockMusic implements Music {
     private RockMusic() {
-
     }
+
     public static RockMusic getRockMusic() {
         System.out.println("Create rock music bean");
         return new RockMusic();

@@ -6,31 +6,32 @@
         http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd">
-    <context:property-placeholder location="classpath:musicPlayer.properties"/>
+        <context:component-scan base-package="ru.eskina.springcourse"/>
+<!--    <context:property-placeholder location="classpath:musicPlayer.properties"/>-->
 
-    <bean id="testBean"
-          class="ru.eskina.springcourse.TestBean">
-        <constructor-arg value="Neil"/>
-    </bean>
+<!--    <bean id="testBean"-->
+<!--          class="ru.eskina.springcourse.TestBean">-->
+<!--        <constructor-arg value="Neil"/>-->
+<!--    </bean>-->
 
-    <bean id="musicBeanRock"
-          class="ru.eskina.springcourse.RockMusic "
-          init-method="doMyInit"
-          factory-method="getRockMusic"
-          destroy-method="doMyDestroy">
-    </bean>
+<!--    <bean id="musicBeanRock"-->
+<!--          class="ru.eskina.springcourse.RockMusic "-->
+<!--          init-method="doMyInit"-->
+<!--          factory-method="getRockMusic"-->
+<!--          destroy-method="doMyDestroy">-->
+<!--    </bean>-->
 
-    <bean id="musicBeanClassic"
-          class="ru.eskina.springcourse.ClassicalMusic"
-          scope="prototype"
-            factory-method="getClassicalMusic"
-            init-method="doMyInit"
-            destroy-method="doMyDestroy">
-    </bean>
+<!--    <bean id="musicBeanClassic"-->
+<!--          class="ru.eskina.springcourse.ClassicalMusic"-->
+<!--          scope="prototype"-->
+<!--            factory-method="getClassicalMusic"-->
+<!--            init-method="doMyInit"-->
+<!--            destroy-method="doMyDestroy">-->
+<!--    </bean>-->
 
-    <bean id="musicBeanJazz"
-          class="ru.eskina.springcourse.JazzMusic ">
-    </bean>
+<!--    <bean id="musicBeanJazz"-->
+<!--          class="ru.eskina.springcourse.JazzMusic ">-->
+<!--    </bean>-->
 
 <!--    <bean id="musicPlayer"-->
 <!--          class="ru.eskina.springcourse.MusicPlayer"-->
