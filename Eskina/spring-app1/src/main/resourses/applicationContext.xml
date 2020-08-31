@@ -18,29 +18,31 @@
     </bean>
 
     <bean id="musicBeanClassic"
-          class="ru.eskina.springcourse.ClassicalMusic">
+          class="ru.eskina.springcourse.ClassicalMusic"
+            init-method="doMyInit"
+            destroy-method="doMyDestroy">
     </bean>
 
     <bean id="musicBeanJazz"
           class="ru.eskina.springcourse.JazzMusic ">
     </bean>
 
-    <bean id="musicPlayer"
-          class="ru.eskina.springcourse.MusicPlayer"
-          scope="prototype">
-<!--        <constructor-arg ref="musicBean"/> -->
-<!--        <property name="music" ref = "musicBean"/>-->
-<!--        <property name="name" value = "MyPlayer"/>-->
-<!--        <property name="volume" value="50"/>-->
-        <property name="name" value = "${musicPlayer.name}"/>
-        <property name="volume" value="${musicPlayer.volume}"/>
-        <property name="playList">
-            <list>
-                <ref bean="musicBeanClassic"/>
-                <ref bean="musicBeanJazz"/>
-                <ref bean="musicBeanRock"/>
-            </list>
-        </property>
-    </bean>
+<!--    <bean id="musicPlayer"-->
+<!--          class="ru.eskina.springcourse.MusicPlayer"-->
+<!--          scope="prototype">-->
+<!--&lt;!&ndash;        <constructor-arg ref="musicBean"/> &ndash;&gt;-->
+<!--&lt;!&ndash;        <property name="music" ref = "musicBean"/>&ndash;&gt;-->
+<!--&lt;!&ndash;        <property name="name" value = "MyPlayer"/>&ndash;&gt;-->
+<!--&lt;!&ndash;        <property name="volume" value="50"/>&ndash;&gt;-->
+<!--        <property name="name" value = "${musicPlayer.name}"/>-->
+<!--        <property name="volume" value="${musicPlayer.volume}"/>-->
+<!--        <property name="playList">-->
+<!--            <list>-->
+<!--                <ref bean="musicBeanClassic"/>-->
+<!--                <ref bean="musicBeanJazz"/>-->
+<!--                <ref bean="musicBeanRock"/>-->
+<!--            </list>-->
+<!--        </property>-->
+<!--    </bean>-->
 
 </beans>
