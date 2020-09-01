@@ -11,11 +11,23 @@ public class MusicPlayer {
     private Music music1;
     private Music music2;
 
+//    @Autowired
+//    public MusicPlayer(@Qualifier("rockMusic")Music music1, @Qualifier("classicalMusic")Music music2) {
+//        this.music1 = music1;
+//        this.music2 = music2;
+//    }
     @Autowired
-    public MusicPlayer(@Qualifier("rockMusic")Music music1, @Qualifier("classicalMusic")Music music2) {
+    @Qualifier("rockMusic")
+    public void setMusic1(Music music1) {
         this.music1 = music1;
+    }
+
+    @Autowired
+    @Qualifier("classicalMusic")
+    public void setMusic2(Music music2) {
         this.music2 = music2;
     }
+
 
     //    private String name;
 //    private int volume;
@@ -54,10 +66,19 @@ public class MusicPlayer {
 //    public  void playMusic() {
 //        playList.forEach(music-> System.out.println(music.getSong()));
 //    }
-    public String playMusic() {
-//        System.out.println("Playing " + classicalMusic.getSong());
-//        System.out.println("Playing " + rockMusic.getSong());
-        return "Playing " + music1.getSong() + " | " + music2.getSong();
+    public String playMusic(MusicTypeEnum musicType) {
+        Music musicToPlay;
+        switch (musicType) {
+            case ROCK:
+                musicToPlay = music1;
+                break;
+            case CLASSICAL:
+                musicToPlay = music2;
+                break;
+            default:
+                throw new IllegalStateException("Unexpected value: " + musicType);
+        }
+        return "Playing " + musicToPlay.getSong();
     }
 //    @Autowired
 //    public void setMusic(Music music) {

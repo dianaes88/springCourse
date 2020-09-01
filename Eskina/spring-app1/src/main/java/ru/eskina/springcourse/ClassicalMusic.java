@@ -1,10 +1,19 @@
 package ru.eskina.springcourse;
 
 import org.springframework.stereotype.Component;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.ThreadLocalRandom;
+
 @Component
 public class ClassicalMusic implements Music {
+    List<String> songs = new ArrayList<>();
 
     private ClassicalMusic() {
+        songs.add("Badinerie");
+        songs.add("Ave Maria");
+        songs.add("Carnival of the animals");
     }
 
     public static ClassicalMusic getClassicalMusic() {
@@ -19,6 +28,10 @@ public class ClassicalMusic implements Music {
     }
     @Override
     public String getSong() {
-        return "Hungarian Rhapsody";
+        return getRandomSong();
+    }
+
+    private String getRandomSong() {
+        return songs.get(ThreadLocalRandom.current().nextInt(songs.size()));
     }
 }

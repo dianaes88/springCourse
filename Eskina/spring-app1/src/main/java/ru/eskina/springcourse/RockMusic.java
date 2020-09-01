@@ -2,9 +2,18 @@ package ru.eskina.springcourse;
 
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.ThreadLocalRandom;
+
 @Component
 public class RockMusic implements Music {
+    private List<String> songs = new ArrayList<>();
     private RockMusic() {
+        songs.add("We will rock you");
+        songs.add("Smoke on the water");
+        songs.add("Hotel California");
+
     }
 
     public static RockMusic getRockMusic() {
@@ -14,7 +23,11 @@ public class RockMusic implements Music {
 
     @Override
     public String getSong() {
-        return "Wind cries Mary";
+        return getRandomSong();
+    }
+
+    private String getRandomSong() {
+        return songs.get(ThreadLocalRandom.current().nextInt(songs.size()));
     }
 
     private void doMyInit() {

@@ -8,7 +8,9 @@ public class TestSpring {
 //        MusicPlayer musicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
 //        musicPlayer.playMusic();
         Computer computer= context.getBean("computer", Computer.class);
-        System.out.println(computer);
+        System.out.println(computer.getMusicPlayer().playMusic(MusicTypeEnum.generateRandomMusicType()));
+        System.out.println(computer.getMusicPlayer().playMusic(MusicTypeEnum.generateRandomMusicType()));
+        System.out.println(computer.getMusicPlayer().playMusic(MusicTypeEnum.generateRandomMusicType()));
 //        ClassicalMusic classic1 = context.getBean("classicalMusic", ClassicalMusic.class);
 //        System.out.println(classic1.getSong());
 //        ClassicalMusic classic2 = context.getBean("musicBeanClassic", ClassicalMusic.class);
