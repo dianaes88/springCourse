@@ -9,12 +9,12 @@ import java.util.concurrent.ThreadLocalRandom;
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 
-@Component
+//@Component
 
 public class ClassicalMusic implements Music {
     List<String> songs = new ArrayList<>();
 
-    private ClassicalMusic() {
+    public ClassicalMusic() {
         songs.add("Badinerie");
         songs.add("Ave Maria");
         songs.add("Carnival of the animals");

@@ -6,10 +6,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 
-@Component
+//@Component
 public class RockMusic implements Music {
     private List<String> songs = new ArrayList<>();
-    private RockMusic() {
+    public RockMusic() {
         songs.add("We will rock you");
         songs.add("Smoke on the water");
         songs.add("Hotel California");
