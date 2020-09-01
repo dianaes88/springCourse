@@ -1,12 +1,11 @@
 package ru.eskina.springcourse;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.stereotype.Component;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.ThreadLocalRandom;
+
 //@Component
 public class MusicPlayer {
     @Value("${musicPlayer.name}")
@@ -14,25 +13,23 @@ public class MusicPlayer {
     @Value("${musicPlayer.volume}")
     private int volume;
 
-    private Music music1;
-    private Music music2;
+    private List<Music> genres;
 
 //    @Autowired
-    public MusicPlayer(@Qualifier("rockMusic")Music music1, @Qualifier("classicalMusic")Music music2) {
-        this.music1 = music1;
-        this.music2 = music2;
+    public MusicPlayer(List<Music> genres) {
+        this.genres = genres;
     }
 //    @Autowired
 //    @Qualifier("rockMusic")
-    public void setMusic1(Music music1) {
-        this.music1 = music1;
-    }
+//    public void setMusic1(Music music1) {
+//        this.musicRock = music1;
+//    }
 //
 //    @Autowired
 //    @Qualifier("classicalMusic")
-    public void setMusic2(Music music2) {
-        this.music2 = music2;
-    }
+//    public void setMusic2(Music music2) {
+//        this.musicClassic = music2;
+//    }
 
 
     //    private String name;
@@ -72,18 +69,8 @@ public class MusicPlayer {
 //    public  void playMusic() {
 //        playList.forEach(music-> System.out.println(music.getSong()));
 //    }
-    public String playMusic(MusicTypeEnum musicType) {
-        Music musicToPlay;
-        switch (musicType) {
-            case ROCK:
-                musicToPlay = music1;
-                break;
-            case CLASSICAL:
-                musicToPlay = music2;
-                break;
-            default:
-                throw new IllegalStateException("Unexpected value: " + musicType);
-        }
+    public String playMusic() {
+        Music musicToPlay = genres.get(ThreadLocalRandom.current().nextInt(genres.size()));
         return "Playing " + musicToPlay.getSong();
     }
 //    @Autowired

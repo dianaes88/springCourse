@@ -6,11 +6,11 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class TestSpring {
     public static void main(String[] args) {
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SpringConfig.class);
-        MusicPlayer musicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
+//        MusicPlayer musicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
 //        musicPlayer.playMusic();
-//        Computer computer= context.getBean("computer", Computer.class);
+        Computer computer= context.getBean("computer", Computer.class);
 //        System.out.println(computer.getMusicPlayer().playMusic(MusicTypeEnum.generateRandomMusicType()));
-//        System.out.println(computer.getMusicPlayer().playMusic(MusicTypeEnum.generateRandomMusicType()));
+        System.out.println(computer.getMusicPlayer().playMusic());
 //        System.out.println(computer.getMusicPlayer().playMusic(MusicTypeEnum.generateRandomMusicType()));
         ClassicalMusic classic1 = context.getBean("classicalMusic", ClassicalMusic.class);
 //        System.out.println(classic1.getSong());
@@ -28,8 +28,8 @@ public class TestSpring {
 //        //test reference is the same(singleton bean scope)
 //        System.out.println(firstMusicPlayer==secondMusicPlayer);
 //        firstMusicPlayer.playMusic();
-        System.out.println(musicPlayer.getName());
-        System.out.println(musicPlayer.getVolume());
+//        System.out.println(musicPlayer.getName());
+//        System.out.println(musicPlayer.getVolume());
 //        firstMusicPlayer.setVolume(10);
 //        System.out.println(firstMusicPlayer.getVolume());
 //        System.out.println(secondMusicPlayer.getVolume());

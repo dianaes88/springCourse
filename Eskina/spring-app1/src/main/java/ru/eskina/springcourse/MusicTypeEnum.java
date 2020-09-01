@@ -4,7 +4,8 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public enum MusicTypeEnum {
     CLASSICAL,
-    ROCK;
+    ROCK,
+    JAZZ;
 
     public static MusicTypeEnum generateRandomMusicType() {
         return values()[ThreadLocalRandom.current().nextInt(values().length)];
