@@ -8,9 +8,14 @@ import java.util.ArrayList;
 import java.util.List;
 @Component
 public class MusicPlayer {
+    private Music music1;
+    private Music music2;
+
     @Autowired
-    @Qualifier("classicalMusic")
-    private Music music;
+    public MusicPlayer(@Qualifier("rockMusic")Music music1, @Qualifier("classicalMusic")Music music2) {
+        this.music1 = music1;
+        this.music2 = music2;
+    }
 
     //    private String name;
 //    private int volume;
@@ -52,7 +57,7 @@ public class MusicPlayer {
     public String playMusic() {
 //        System.out.println("Playing " + classicalMusic.getSong());
 //        System.out.println("Playing " + rockMusic.getSong());
-        return "Playing " + music.getSong();
+        return "Playing " + music1.getSong() + " | " + music2.getSong();
     }
 //    @Autowired
 //    public void setMusic(Music music) {
