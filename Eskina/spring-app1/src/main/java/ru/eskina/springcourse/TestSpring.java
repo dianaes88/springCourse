@@ -11,10 +11,10 @@ public class TestSpring {
 //        System.out.println(computer.getMusicPlayer().playMusic(MusicTypeEnum.generateRandomMusicType()));
 //        System.out.println(computer.getMusicPlayer().playMusic(MusicTypeEnum.generateRandomMusicType()));
 //        System.out.println(computer.getMusicPlayer().playMusic(MusicTypeEnum.generateRandomMusicType()));
-//        ClassicalMusic classic1 = context.getBean("classicalMusic", ClassicalMusic.class);
+        ClassicalMusic classic1 = context.getBean("classicalMusic", ClassicalMusic.class);
 //        System.out.println(classic1.getSong());
-//        ClassicalMusic classic2 = context.getBean("musicBeanClassic", ClassicalMusic.class);
-//        System.out.println(classic2.getSong());
+        ClassicalMusic classic2 = context.getBean("classicalMusic", ClassicalMusic.class);
+        System.out.println(classic1 == classic2);
 //        RockMusic musicRock1 = context.getBean("rockMusic", RockMusic.class);
 //        System.out.println(musicRock1.getSong());
 //        RockMusic musicRock2 = context.getBean("rockMusic", RockMusic.class);

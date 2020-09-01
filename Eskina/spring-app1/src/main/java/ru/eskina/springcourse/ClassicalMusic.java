@@ -1,5 +1,6 @@
 package ru.eskina.springcourse;
 
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
@@ -7,7 +8,7 @@ import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 
 @Component
-
+@Scope("singleton")
 public class ClassicalMusic implements Music {
     List<String> songs = new ArrayList<>();
 
