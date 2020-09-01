@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 
 @Component
+
 public class ClassicalMusic implements Music {
     List<String> songs = new ArrayList<>();
 

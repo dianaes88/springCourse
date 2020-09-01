@@ -5,12 +5,12 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class TestSpring {
     public static void main(String[] args) {
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
-//        MusicPlayer musicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
+        MusicPlayer musicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
 //        musicPlayer.playMusic();
-        Computer computer= context.getBean("computer", Computer.class);
-        System.out.println(computer.getMusicPlayer().playMusic(MusicTypeEnum.generateRandomMusicType()));
-        System.out.println(computer.getMusicPlayer().playMusic(MusicTypeEnum.generateRandomMusicType()));
-        System.out.println(computer.getMusicPlayer().playMusic(MusicTypeEnum.generateRandomMusicType()));
+//        Computer computer= context.getBean("computer", Computer.class);
+//        System.out.println(computer.getMusicPlayer().playMusic(MusicTypeEnum.generateRandomMusicType()));
+//        System.out.println(computer.getMusicPlayer().playMusic(MusicTypeEnum.generateRandomMusicType()));
+//        System.out.println(computer.getMusicPlayer().playMusic(MusicTypeEnum.generateRandomMusicType()));
 //        ClassicalMusic classic1 = context.getBean("classicalMusic", ClassicalMusic.class);
 //        System.out.println(classic1.getSong());
 //        ClassicalMusic classic2 = context.getBean("musicBeanClassic", ClassicalMusic.class);
@@ -27,8 +27,8 @@ public class TestSpring {
 //        //test reference is the same(singleton bean scope)
 //        System.out.println(firstMusicPlayer==secondMusicPlayer);
 //        firstMusicPlayer.playMusic();
-//        System.out.println(firstMusicPlayer.getName());
-//        System.out.println(firstMusicPlayer.getVolume());
+        System.out.println(musicPlayer.getName());
+        System.out.println(musicPlayer.getVolume());
 //        firstMusicPlayer.setVolume(10);
 //        System.out.println(firstMusicPlayer.getVolume());
 //        System.out.println(secondMusicPlayer.getVolume());
