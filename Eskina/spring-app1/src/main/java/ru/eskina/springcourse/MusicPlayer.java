@@ -1,16 +1,18 @@
 package ru.eskina.springcourse;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
 @Component
 public class MusicPlayer {
-//    private List<Music> playList = new ArrayList<>();
     @Autowired
+    @Qualifier("classicalMusic")
     private Music music;
-//    private String name;
+
+    //    private String name;
 //    private int volume;
 //    @Autowired
 //    public MusicPlayer(Music music) {
@@ -47,11 +49,13 @@ public class MusicPlayer {
 //    public  void playMusic() {
 //        playList.forEach(music-> System.out.println(music.getSong()));
 //    }
-    public  void playMusic() {
-        System.out.println("Playing " + music.getSong());
+    public String playMusic() {
+//        System.out.println("Playing " + classicalMusic.getSong());
+//        System.out.println("Playing " + rockMusic.getSong());
+        return "Playing " + music.getSong();
     }
 //    @Autowired
-    public void setMusic(Music music) {
-        this.music = music;
-    }
+//    public void setMusic(Music music) {
+//        this.music = music;
+//    }
 }

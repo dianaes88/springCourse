@@ -5,8 +5,10 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class TestSpring {
     public static void main(String[] args) {
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
-        MusicPlayer musicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
-        musicPlayer.playMusic();
+//        MusicPlayer musicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
+//        musicPlayer.playMusic();
+        Computer computer= context.getBean("computer", Computer.class);
+        System.out.println(computer);
 //        ClassicalMusic classic1 = context.getBean("classicalMusic", ClassicalMusic.class);
 //        System.out.println(classic1.getSong());
 //        ClassicalMusic classic2 = context.getBean("musicBeanClassic", ClassicalMusic.class);
