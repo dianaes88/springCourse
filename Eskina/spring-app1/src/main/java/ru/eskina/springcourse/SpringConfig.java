@@ -23,7 +23,7 @@ public class SpringConfig {
     }
 
     @Bean
-    public JazzMusic jazzMusic() {
+    public JazzMusic jazzMusic() { 
         return new JazzMusic();
     }
 
