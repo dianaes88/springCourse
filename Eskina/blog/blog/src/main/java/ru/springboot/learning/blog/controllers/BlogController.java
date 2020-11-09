@@ -40,7 +40,7 @@ public class BlogController {
     }*/
     @GetMapping("/blog/{id}")
     public String showPost(@PathVariable(value = "id") long id, Model model) {
-        if(!postRepository.existsById(id)) {
+        if (!postRepository.existsById(id)) {
             return "redirect:/blog";
         }
         Optional<Post> post = postRepository.findById(id);
@@ -49,4 +49,25 @@ public class BlogController {
         model.addAttribute("post", result);
         return "blog-details";
     }
+
+    @GetMapping("/blog/{id}/edit")
+    public String editPost(@PathVariable(value = "id") long id, Model model) {
+        if (!postRepository.existsById(id)) {
+            return "redirect:/blog";
+        }
+        Optional<Post> post = postRepository.findById(id);
+        ArrayList<Post> result = new ArrayList<>();
+        post.ifPresent(result::add);
+        model.addAttribute("post", result);
+        return "blog-edit";
+    }
+
+    @PostMapping("/blog/{id}/edit")
+    public String updatePost(@PathVariable(value = "id") long id,@ModelAttribute("post") Post post) {
+        Post postToUpdate = postRepository.findById(id).orElseThrow();
+        postToUpdate.update(post);
+        postRepository.save(postToUpdate);
+        return "redirect:/blog";
+    }
+
 }

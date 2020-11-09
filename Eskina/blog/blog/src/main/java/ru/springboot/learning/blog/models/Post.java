@@ -62,4 +62,10 @@ public class Post {
     public void setViews(int views) {
         this.views = views;
     }
+
+    public void update(Post post) {
+        setTitle(post.getTitle());
+        setAnons(post.getAnons());
+        setFull_text(post.getFull_text());
+    }
 }
