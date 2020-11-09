@@ -7,6 +7,9 @@ import org.springframework.web.bind.annotation.*;
 import ru.springboot.learning.blog.models.Post;
 import ru.springboot.learning.blog.repository.PostRepository;
 
+import java.util.ArrayList;
+import java.util.Optional;
+
 @Controller
 public class BlogController {
     @Autowired
@@ -35,5 +38,15 @@ public class BlogController {
         postRepository.save(post);
         return "redirect:/blog";
     }*/
-
+    @GetMapping("/blog/{id}")
+    public String showPost(@PathVariable(value = "id") long id, Model model) {
+        if(!postRepository.existsById(id)) {
+            return "redirect:/blog";
+        }
+        Optional<Post> post = postRepository.findById(id);
+        ArrayList<Post> result = new ArrayList<>();
+        post.ifPresent(result::add);
+        model.addAttribute("post", result);
+        return "blog-details";
+    }
 }
